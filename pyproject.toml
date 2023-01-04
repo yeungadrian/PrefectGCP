@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "marketdata"
+version = "0.1.0"
+description = ""
+authors = ["yeungadrian"]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+pandas = "^1.4.3"
+prefect = "^2.3.2"
+pydantic = "^1.9.1"
+tqdm = "^4.64.0"
+google-cloud-bigquery = "^2.34.4"
+openpyxl = "^3.0.10"
+prefect-gcp = {extras = ["bigquery","cloud_storage"], version = "^0.2.1"}
+gcsfs = "^2022.8.2"
+pytest-cov = "^3.0.0"
+
+
+[tool.poetry.dev-dependencies]
+black = "^22.8.0"
+notebook = "^6.4.12"
+pre-commit = "^2.17.0"
+pytest = "^6.2.5"
+
+
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 79
+include = '\.pyi?$'
+exclude = '''
+/(
+	\.git
+| \.hg
+| \.mypy_cache
+| \.tox
+| \.venv
+| _build
+| buck-out
+| build   
+)/ 
+'''
